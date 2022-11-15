@@ -1,4 +1,4 @@
-package gerenciador.servlet;
+package gerenciador.acao;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -6,20 +6,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class AlteraEmpresaServlet
- */
-@WebServlet("/alteraEmpresa")
-public class AlteraEmpresaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+import gerenciador.modelo.Banco;
+import gerenciador.modelo.Empresa;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+public class AlteraEmpresa {
+	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeEmpresa = request.getParameter("nome");
 		String paramDataAbertura = request.getParameter("data");
 		String paramId= request.getParameter("id");
@@ -39,8 +33,6 @@ public class AlteraEmpresaServlet extends HttpServlet {
 		}
 
 
-		response.sendRedirect("listaEmpresas");
-
+		response.sendRedirect("entrada?acao=ListaEmpresas");
 	}
-
 }
