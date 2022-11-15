@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Java Standard Taglib</title>
+<title>Lista de Empresas</title>
 </head>
 <body>
 	<br /> Lista de empresas:
@@ -25,7 +25,7 @@
 		</c:forEach>
 
 	</ul>
-	<a href="formNovaEmpresa.jsp">nova empresa</a>
+	<a href="/gerenciador/entrada?acao=NovaEmpresaForm">nova empresa</a>
 
 </body>
 </html>
