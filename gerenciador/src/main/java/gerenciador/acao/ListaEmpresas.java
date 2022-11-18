@@ -11,13 +11,17 @@ import gerenciador.modelo.Banco;
 import gerenciador.modelo.Empresa;
 
 public class ListaEmpresas implements Acao{
-
-	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("listando empresas");
+		
 		Banco banco = new Banco();
 		List<Empresa> lista = banco.getEmpresas();
-
+		
 		request.setAttribute("empresas", lista);
 		
 		return "forward:listaEmpresas.jsp";
 	}
+
 }

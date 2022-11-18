@@ -11,12 +11,18 @@
 <title>Lista de Empresas</title>
 </head>
 <body>
+
+	<c:import url="logout-parcial.jsp"></c:import>
+
+	<br /> Usuario logado: ${usuarioLogado.login}
+	<br />
+
 	<br /> Lista de empresas:
 	<br />
 
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">
-			<li>${empresa.nome} - <fmt:formatDate
+			<li>${empresa.nome}-<fmt:formatDate
 					value="${empresa.dataAbertura}" pattern="dd/MM/yyyy" /> <a
 				href="/gerenciador/entrada?acao=MostraEmpresa&id=${empresa.id}">edita</a>
 				<a href="/gerenciador/entrada?acao=RemoveEmpresa&id=${empresa.id}">remove</a>

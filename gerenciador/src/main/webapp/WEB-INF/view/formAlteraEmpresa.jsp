@@ -10,15 +10,15 @@
 <title>Alterar empresa</title>
 </head>
 <body>
-
+	<c:import url="logout-parcial.jsp"></c:import>
 	<form action="${linkServletAlteraEmpresa}" method="post">
 
-		Nome: <input type="text" name="nome" value="${empresa.nome}" /> 
-		Data Abertura: <input type="text" name="data" value="<fmt:formatDate
+		Nome: <input type="text" name="nome" value="${empresa.nome}" /> Data
+		Abertura: <input type="text" name="data"
+			value="<fmt:formatDate
 					value="${empresa.dataAbertura}" pattern="dd/MM/yyyy" />" />
-		<input type="hidden" name="id" value="${empresa.id}" /> 
-		<input type="hidden" name="acao" value="AlteraEmpresa" />
-		<input
+		<input type="hidden" name="id" value="${empresa.id}" /> <input
+			type="hidden" name="acao" value="AlteraEmpresa" /> <input
 			type="submit" />
 	</form>
 
